@@ -6,4 +6,12 @@
 */
 
 // your code
-let factorial
+let factorial = 1;
+let count = 2;
+let factorialCount = 10;
+
+while (count <= factorialCount) {
+  factorial = count * factorial;
+  count++;
+  console.log(factorial);
+}
