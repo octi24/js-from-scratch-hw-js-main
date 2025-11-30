@@ -3,7 +3,7 @@
 
 Входные данные:
 
-- **`str`**: Строка, символы которой нужно удвоить.
+- **`_string`**: Строка, символы которой нужно удвоить.
 
 Выходные данные:
 
@@ -12,4 +12,19 @@
 Пример работы функции: `doubleEachCharacter('hello')` вернёт `'hheelllloo'`
 */
 
-function doubleEachCharacter() {}
+const str = 'Hello World';
+
+function doubleEachCharacter(_string) {
+  let doubleStr = '';
+  for (let i = 0; i < _string.length; i++) {
+    doubleStr = doubleStr + _string[i] + _string[i];
+  }
+  return doubleStr;
+}
+console.log(doubleEachCharacter(str));
+
+/*
+for (let char of 'hello') {
+  console.log(char + char);
+}
+*/
