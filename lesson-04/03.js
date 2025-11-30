@@ -17,4 +17,22 @@ findCommonElements([1, 2, 3], [2, 3, 4]) // [2, 3]
 Подсказка: можно использовать функцию `includesElement`, которую мы написали ранее. Переписывать её не нужно, она доступна по всему проекту за счёт hoisting.
 */
 
-function findCommonElements() {}
+const array1 = [12, 18, 22, 37, 48];
+const array2 = [37, 56, 43, 48, 28];
+
+function findCommonElements(_array1, _array2) {
+  const newArray = [];
+  // Внешний цикл. Берёт ОДНО число массива1 за 1 итерацию
+  for (let i = 0; i < _array1.length; i++) {
+    // Внутренний цикл. Берёт ВСЕ числа массива2 за 1 итерацию внешнего цикла и сравнивает с массивом1
+    for (let j = 0; j < _array2.length; j++) {
+      // Если число массива1 совпадает с числом массива2, то отправлять число в новый массив
+      if (_array1[i] === _array2[j]) {
+        newArray.push(_array1[i]);
+      }
+    }
+  }
+  return newArray;
+}
+
+console.log(findCommonElements(array1, array2));
