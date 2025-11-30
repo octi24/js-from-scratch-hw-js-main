@@ -36,4 +36,4 @@ function findUniqueElements(_array) {
 
   return newArray;
 }
-console.log(findUniqueElements(arr2));
+console.log(findUniqueElements(arr));
