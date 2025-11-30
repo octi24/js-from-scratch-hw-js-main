@@ -18,22 +18,22 @@ const arr = [12, 14, 55, 667, 91, 55]; // Исходный массив
 
 function findUniqueElements(_array) {
   const newArray = []; // Новый массив
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < _array.length; i++) {
     // Внутренний цикл - проверяем ВЕСЬ результат
     let found = false; // Предполагаем, что числа ещё нет в результате
     for (let j = 0; j < newArray.length; j++) {
       // Цикл, который перебирает каждый элемент Нового массива
-      if (newArray[j] === arr[i]) {
+      if (newArray[j] === _array[i]) {
         found = true;
         break;
       }
     }
     if (!found) {
       // Если НЕ нашли - добавляем в Новый массив
-      newArray.push(arr[i]);
+      newArray.push(_array[i]);
     }
   }
 
   return newArray;
 }
-console.log(findUniqueElements(arr));
+console.log(findUniqueElements(arr2));
