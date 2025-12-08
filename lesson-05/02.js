@@ -46,8 +46,9 @@ function updateGallery(objectGallery, keyTitle, newValueOfTitle) {
   let found = false;
 
   for (const key in objectGallery) {
-    if (objectGallery[key] === keyTitle) {
+    if (objectGallery[key] === newValueOfTitle) {
       objectGallery[key] += `, ${newValueOfTitle}`;
+      found = true;
       break;
     }
   }
