@@ -13,7 +13,27 @@
 const game = {
   resources: {
     gold: 250,
-    lumber: 100,
+    lumber: 100
   },
-  addResource() {}
-}
+  addResources(resource, amount) {
+    let found;
+    for (const key in this.resources) {
+      if (resource === key) {
+        console.log(
+          `${resource}(resource) = ${key}(obj.key) - true. ${resource} + ${amount}`
+        );
+        this.resources[resource] += amount;
+        found = true;
+        break;
+      } else {
+        found = false;
+      }
+    }
+    if (found === false) {
+      console.log('Invalid resource');
+    }
+  }
+};
+game.addResources('gold', 50);
+// console.log(`Gold: ${game.resources.gold}`);
+// console.log(`Lumber: ${game.resources.lumber}`);
