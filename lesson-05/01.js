@@ -15,7 +15,7 @@ const game = {
     gold: 250,
     lumber: 100
   },
-  addResources(resource, amount) {
+  addResource(resource, amount) {
     if (typeof amount !== 'number' || isNaN(amount) || amount <= 0) {
       console.log(`Ошибка! ${amount} должно быть положительным числом!`);
       return;
