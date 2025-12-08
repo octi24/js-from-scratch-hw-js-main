@@ -32,7 +32,33 @@ console.log(gallery)
 const gallery = {
   'Mona Lisa': 'Leonardo da Vinci',
   'Starry Night': 'Vincent van Gogh',
-  'The Scream': 'Edvard Munch',
+  'The Scream': 'Edvard Munch'
+};
+
+// gallery['The Last Supper'] = 'Leonardo da Vinci'; // EXAMPLE
+
+function updateGallery(objectGallery, keyTitle, newValueOfTitle) {
+  if (typeof keyTitle !== 'string' || typeof newValueOfTitle !== 'string') {
+    console.log(`Ошибка! Введите строку!`);
+    return;
+  }
+
+  let found = false;
+
+  for (const key in objectGallery) {
+    if (objectGallery[key] === keyTitle) {
+      objectGallery[key] += `, ${newValueOfTitle}`;
+      break;
+    }
+  }
+  if (!found) {
+    objectGallery[keyTitle] = newValueOfTitle;
+  }
 }
 
-function updateGallery() {}
+// console.log(gallery);
+
+// updateGallery(gallery, 'Mona Lisa', 'Leonardo da Vinci, 1503-1506');
+// updateGallery(gallery, 'The Persistence of Memory', 'Salvador Dali');
+
+// console.log(gallery);
