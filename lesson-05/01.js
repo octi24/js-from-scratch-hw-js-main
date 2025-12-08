@@ -19,9 +19,9 @@ const game = {
     let found;
     for (const key in this.resources) {
       if (resource === key) {
-        console.log(
-          `${resource}(resource) = ${key}(obj.key) - true. ${resource} + ${amount}`
-        );
+        // console.log(
+        // `${resource}(resource) = ${key}(obj.key) - true. ${resource} + ${amount}`
+        // );
         this.resources[resource] += amount;
         found = true;
         break;
@@ -34,6 +34,6 @@ const game = {
     }
   }
 };
-game.addResources('gold', 50);
+// game.addResources('stone', 50);
 // console.log(`Gold: ${game.resources.gold}`);
 // console.log(`Lumber: ${game.resources.lumber}`);
