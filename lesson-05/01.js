@@ -16,24 +16,30 @@ const game = {
     lumber: 100
   },
   addResources(resource, amount) {
-    let found;
+    if (typeof amount !== 'number' || isNaN(amount) || amount <= 0) {
+      console.log(`Ошибка! ${amount} должно быть положительным числом!`);
+      return;
+    }
+
+    let found = false;
+
     for (const key in this.resources) {
       if (resource === key) {
-        // console.log(
-        // `${resource}(resource) = ${key}(obj.key) - true. ${resource} + ${amount}`
-        // );
         this.resources[resource] += amount;
         found = true;
         break;
-      } else {
-        found = false;
       }
     }
-    if (found === false) {
+    if (!found) {
       console.log('Invalid resource');
     }
   }
 };
+// console.log(`Gold: ${game.resources.gold} до`);
+// console.log(`Lumber: ${game.resources.lumber} до`);
+// game.addResources('gold', 50);
+// game.addResources('gold', -50);
+// game.addResources('lumber', 50);
 // game.addResources('stone', 50);
-// console.log(`Gold: ${game.resources.gold}`);
-// console.log(`Lumber: ${game.resources.lumber}`);
+// console.log(`Gold: ${game.resources.gold} после`);
+// console.log(`Lumber: ${game.resources.lumber} после`);
