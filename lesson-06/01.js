@@ -25,14 +25,15 @@ console.log(oddNumbers) // Должен вывести: [1, 3, 5]
 
 const numbers = [1, 2, 3, 4, 5];
 
-const isCallbackFunc = (element) => element % 2 !== 0;
+const isCallbackFunc = (element, index) => element % 2 !== 0;
 
 const filter = (array, callback) => {
   const newNumbers = [];
 
   for (let i = 0; i < array.length; i++) {
-    if (callback(array[i])) {
+    if (callback(array[i], i)) {
       newNumbers.push(array[i]);
+      // console.log(array.indexOf(array[i]));
     }
   }
   return newNumbers;
