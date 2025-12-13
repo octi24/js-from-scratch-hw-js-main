@@ -38,5 +38,5 @@ const filter = (array, callback) => {
   return newNumbers;
 };
 
-const oddNumbers = filter(numbers, isOdd);
+const oddNumbers = filter(numbers, isCallbackFunc);
 console.log(oddNumbers);
