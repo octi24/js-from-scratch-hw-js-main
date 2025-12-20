@@ -15,5 +15,37 @@
 const WEB_TECH_IMAGES = [
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/32f74d50-68d0-46aa-b035-7b3a5300d2c1_js-magic-logo.jpg',
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/c8a1f4a6-1337-4899-bdfd-a8c9c7bb806a_css-magic-logo.jpg',
-  'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/784380b9-6937-42a6-bdfe-869835820234_html-magic-logo.jpg',
-]
+  'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/784380b9-6937-42a6-bdfe-869835820234_html-magic-logo.jpg'
+];
+console.log(WEB_TECH_IMAGES.length);
+
+const prevBtn = document.querySelector('#prev-button');
+const nextBtn = document.querySelector('#next-button');
+const img = document.querySelector('#web-tech-image');
+let counter = 0;
+
+img.setAttribute('src', WEB_TECH_IMAGES[counter]);
+
+prevBtn.addEventListener('click', () => {
+  console.log('Prev');
+  if (counter > 0) {
+    img.setAttribute('src', WEB_TECH_IMAGES[(counter -= 1)]);
+  } else if (counter === 0) {
+    counter = 2;
+    img.setAttribute('src', WEB_TECH_IMAGES[counter]);
+  }
+  console.log(img.getAttribute('src'));
+  console.log(counter);
+});
+
+nextBtn.addEventListener('click', () => {
+  console.log(img.getAttribute('src'));
+  if (counter < 2) {
+    img.setAttribute('src', WEB_TECH_IMAGES[(counter += 1)]);
+  } else if (counter === 2) {
+    counter = 0;
+    img.setAttribute('src', WEB_TECH_IMAGES[counter]);
+  }
+  console.log('Next');
+  console.log(counter);
+});
