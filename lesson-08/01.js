@@ -11,8 +11,15 @@ function capitalizeWords(str) {
   let capitalizedWords = '';
 
   for (let i = 0; i < arr.length; i++) {
-    capitalizedWords =
-      capitalizedWords + arr[i][0].toUpperCase() + arr[i].slice(1) + ' ';
+    let word = arr[i];
+    word = word[0].toUpperCase() + word.slice(1).toLowerCase();
+
+    capitalizedWords = capitalizedWords + word;
+
+    if (i !== arr.length - 1) {
+      capitalizedWords = capitalizedWords + ' ';
+    }
   }
+
   return capitalizedWords;
 }
