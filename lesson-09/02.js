@@ -36,6 +36,7 @@ let interval;
 startButton.addEventListener('click', () => {
   let counter = 3;
   // your code
+  clearInterval(interval);
 
   countdownDisplay.textContent = counter;
 
@@ -44,8 +45,8 @@ startButton.addEventListener('click', () => {
     countdownDisplay.textContent = counter;
 
     if (counter === 0) {
-      countdownDisplay.textContent = '🚀';
       clearInterval(interval);
+      countdownDisplay.textContent = '🚀';
     }
   }, 1000);
 });
