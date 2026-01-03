@@ -33,9 +33,15 @@ let isTimerStarted = false;
 let timerId;
 let interval;
 
-startButton.addEventListener('click', () => {
+startButton.addEventListener('click', (event) => {
   let counter = 3;
   // your code
+
+  if (countdownDisplay.textContent <= 3) {
+    event.stopPropagation();
+    counter = countdownDisplay.textContent;
+  }
+
   clearInterval(interval);
 
   countdownDisplay.textContent = counter;
