@@ -110,8 +110,8 @@ const controller = {
   },
 }
 
-function init() {
-  view.init()
-}
+// function init() {
+//   view.init()
+// }
 
-document.addEventListener('DOMContentLoaded', init)
+document.addEventListener('DOMContentLoaded', view.init)
