@@ -114,4 +114,4 @@ const controller = {
 //   view.init()
 // }
 
-document.addEventListener('DOMContentLoaded', view.init)
+document.addEventListener('DOMContentLoaded', () => view.init())
