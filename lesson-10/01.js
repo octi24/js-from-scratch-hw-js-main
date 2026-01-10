@@ -32,7 +32,7 @@ const model = {
   // your code
   delMovie(id) {
     this.movies = this.movies.filter((movie) => movie.id !== id)
-    view.renderMovies(model.movies)
+    // view.renderMovies(model.movies)
   }
 }
 
