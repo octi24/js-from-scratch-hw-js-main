@@ -97,7 +97,7 @@ const controller = {
   addMovie(title, description) {
     if (title.trim() !== '' && description.trim() !== '') {
       model.addMovie(title, description)
-      view.renderMovies(this.movies)
+      view.renderMovies(model.movies)
       view.displayMessage('Фильм добавлен успешно!')
     } else {
       view.displayMessage('Заполните все поля!', true)
