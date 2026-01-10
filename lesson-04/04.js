@@ -12,7 +12,7 @@
 Пример работы функции: `doubleEachCharacter('hello')` вернёт `'hheelllloo'`
 */
 
-const str = 'Hello World';
+let str = 'Hello World';
 
 function doubleEachCharacter(_string) {
   let doubleStr = '';
