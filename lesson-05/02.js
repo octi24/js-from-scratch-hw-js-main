@@ -63,3 +63,42 @@ function updateGallery(objectGallery, keyTitle, newValueOfTitle) {
 // updateGallery(gallery, 'The Persistence of Memory', 'Salvador Dali');
 
 // console.log(gallery);
+
+{
+  /*
+
+Напишите функцию, которая добавляет именованное свойство к объекту. Должна быть предусмотрена возможность присвоения этому свойству нового значения. Если свойство уже существует в объекте, то должно быть выдано сообщение об ошибке.
+
+*/
+  const object = {};
+
+  function addProperty(obj, prop, value) {
+    let found = false;
+
+    //Значение prop должно быть строкой
+    if (typeof prop !== 'string') {
+      console.log(`Error, ${prop} in not sting`);
+      return;
+    }
+
+    // Проверка на совпадение, если оно есть, то значение ключа обновляется и вывод ошибки о том, что нашло совпадение
+    for (const key in obj) {
+      if (key === prop) {
+        found = true;
+        throw new Error('Свойство уже существует');
+      }
+    }
+    if (!found) {
+      obj[prop] = value;
+      console.log(`Ключ ${value} присвоился объекту`);
+    }
+
+    return obj;
+  }
+
+  console.log(object);
+  console.log(addProperty(object, 'name', 'Lele'));
+  console.log(addProperty(object, 'age', 25));
+  console.log(addProperty(object, 'age', 26));
+  console.log(addProperty(object, 'age', 26));
+}
