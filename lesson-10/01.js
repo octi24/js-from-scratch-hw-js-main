@@ -27,7 +27,6 @@ const model = {
     const id = Math.random()
     const newMovie = {id, title, description}
     this.movies.push(newMovie)
-    view.renderMovies(this.movies)
   },
   // your code
   delMovie(id) {
@@ -98,6 +97,7 @@ const controller = {
   addMovie(title, description) {
     if (title.trim() !== '' && description.trim() !== '') {
       model.addMovie(title, description)
+      view.renderMovies(this.movies)
       view.displayMessage('Фильм добавлен успешно!')
     } else {
       view.displayMessage('Заполните все поля!', true)
@@ -106,6 +106,7 @@ const controller = {
   // your code
   delMovie(id) {
     model.delMovie(id)
+    view.renderMovies(model.movies)
     view.displayMessage('Фильм успешно удалён!')
   },
 }
