@@ -60,7 +60,7 @@ function updateGallery(objectGallery, keyTitle, newValueOfTitle) {
 // console.log(gallery);
 
 // updateGallery(gallery, 'Mona Lisa', 'Leonardo da Vinci, 1503-1506');
-// updateGallery(gallery, 'The Persistence of Memory', 'Salvador Dali');
+// updateGallery(gallery, 'The Persistence of Memory', 'Salvador Dalí');
 
 // console.log(gallery);
 
@@ -85,7 +85,7 @@ function updateGallery(objectGallery, keyTitle, newValueOfTitle) {
     for (const key in obj) {
       if (key === prop) {
         found = true;
-        throw new Error('Свойство уже существует');
+        // throw new Error('Свойство уже существует');
       }
     }
     if (!found) {
@@ -99,6 +99,6 @@ function updateGallery(objectGallery, keyTitle, newValueOfTitle) {
   console.log(object);
   console.log(addProperty(object, 'name', 'Lele'));
   console.log(addProperty(object, 'age', 25));
-  console.log(addProperty(object, 'age', 26));
+  // console.log(addProperty(object, 'age', 26));
   console.log(addProperty(object, 'age', 26));
 }

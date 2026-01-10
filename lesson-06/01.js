@@ -106,7 +106,6 @@ console.log(oddNumbers);
   ];
 
   function countSheeps(sheep) {
-    // TODO
     const count = sheep.filter((element) => element);
     return count.length;
     // return sheep.filter(Boolean).length;
